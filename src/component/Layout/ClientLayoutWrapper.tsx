@@ -5,6 +5,9 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
+import PWAInstallButton from "../PWAButton";
+import PWARegister from "../PWARegister";
+
 import { NotificationProvider, useNotification } from "../NotificationComponent";
 import { supabase } from "@/lib/supabase"
 import { table } from "console";
@@ -85,12 +88,14 @@ function LayoutContent({ children }: { children: React.ReactNode}) {
 
     return (
         <div className="flex min-h-screen">
-        <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
-        <div className="flex flex-col flex-1">
-            <Header brandName="My App" onBrandClick={toggleSidebar} />
-            <main className="flex-1 p-4 md:p-6 bg-gray-50">{children}</main>
-            <Footer />
-        </div>
+            <PWARegister />
+            <PWAInstallButton />
+            <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
+            <div className="flex flex-col flex-1">
+                <Header brandName="My App" onBrandClick={toggleSidebar} />
+                <main className="flex-1 p-4 md:p-6 bg-gray-50">{children}</main>
+                <Footer />
+            </div>
         </div>
     );
 }

@@ -17,6 +17,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NextJS V2 - Aplikasi dengan NextJS 13 dan TailwindCSS",
   description: "A simple example of using Next.js 13 with a realtime database.",
+  manifest: "/manifest.json",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  }
 };
 
 export default function RootLayout({
