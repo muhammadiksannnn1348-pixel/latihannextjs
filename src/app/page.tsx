@@ -12,8 +12,11 @@ export default function HomePage() {
         <StatCard title="Statistik 2" />
         <StatCard title="Statistik Full" fullWidth/>
       </div>
+
       <MediaSection />
+
       <InfiniteScrollFeed />
+      
     </div>
   )
 }
