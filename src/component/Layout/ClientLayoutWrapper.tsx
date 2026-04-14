@@ -86,9 +86,12 @@ function LayoutContent({ children }: { children: React.ReactNode}) {
         setSidebarOpen(false);
     };
 
+    useEffect(() => {
+        PWARegister();
+    }, []);
+
     return (
         <div className="flex min-h-screen">
-            <PWARegister />
             <PWAInstallButton />
             <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
             <div className="flex flex-col flex-1">
